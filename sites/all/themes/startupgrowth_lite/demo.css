@@ -341,3 +341,15 @@ input[type="submit"] {
 .form-managed-file .form-file {
   display: inline-block;
 }
+.node-pacient .field.field-label-above {
+    margin-bottom: 10px;
+}
+.node-pacient .field-label {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.node-pacient .field-items {
+    display: inline-block;
+    font-size: 16px;
+}
