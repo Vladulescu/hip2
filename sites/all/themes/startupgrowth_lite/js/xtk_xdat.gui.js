@@ -1858,6 +1858,29 @@ dat.GUI = dat.gui.GUI = (function (css, saveDialogueContents, styleSheet, contro
 
 
       });
+      
+       this.__exitButton = document.createElement('div');
+       this.__exitButton.innerHTML = "Închide vizualizarea";
+       dom.addClass( this.__exitButton, 'exit-button');
+      this.domElement.appendChild(this.__exitButton);
+
+      dom.bind(this.__exitButton, 'click', function() {
+
+          var canvas  = document.getElementsByTagName('canvas'), index ;
+
+          for (index = canvas.length - 1; index >= 0; index--) {
+            canvas[index].parentNode.removeChild(canvas[index]);
+          }
+          var menu = document.getElementsByClassName("dg ac"), index;
+
+          for (index = menu.length - 1; index >= 0; index--) {
+            menu[index].parentNode.removeChild(menu[index]);
+          }
+          
+          
+
+      });
+   
 
 
       // Oh, you're a nested GUI!
@@ -1964,8 +1987,8 @@ dat.GUI = dat.gui.GUI = (function (css, saveDialogueContents, styleSheet, contro
   GUI.CLASS_DRAG = 'drag';
 
   GUI.DEFAULT_WIDTH = 245;
-  GUI.TEXT_CLOSED = 'Close Controls';
-  GUI.TEXT_OPEN = 'Open Controls';
+  GUI.TEXT_CLOSED = 'Ascunde Meniul';
+  GUI.TEXT_OPEN = 'Vezi Meniul';
 
   dom.bind(window, 'keydown', function(e) {
 
@@ -2131,6 +2154,10 @@ dat.GUI = dat.gui.GUI = (function (css, saveDialogueContents, styleSheet, contro
 
           if (root.__closeButton) {
             root.__closeButton.style.width = root.width + 'px';
+          }
+
+          if (root.__exitButton) {
+            root.__exitButton.style.width = root.width + 'px';
           }
 
         },

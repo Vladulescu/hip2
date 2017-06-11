@@ -279,8 +279,11 @@
     </div>
     <!-- EOF: #bottom-content -->
     <?php endif; ?>
+    <div class="push"></div>
+</div>
+<!-- EOF:#page-container -->
 
-    <?php if ($page['footer_top']):?>
+ <?php if ($page['footer_top']):?>
     <!-- #footer-top -->
     <div id="footer-top" class="clearfix">
         <div class="container">
@@ -385,6 +388,3 @@
         </div>
     </div><!-- EOF:#subfooter -->
     <?php endif; ?>
-    
-</div>
-<!-- EOF:#page-container -->

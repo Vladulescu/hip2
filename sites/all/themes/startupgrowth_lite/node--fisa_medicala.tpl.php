@@ -50,20 +50,26 @@
         hide($content['comments']);
         hide($content['links']);
         print render($content);
+        // echo "<prE>";
+        // print_r($content);
+        // exit;
         // $content['field_radiografie_'][0]['#markup']
         $fisa_url = "";
         if( !empty( $content['field_radiografie_'][0]['#markup'] ) ){
         	$fisa_url = $content['field_radiografie_'][0]['#markup'];
+        	?>
+        	<input type="button" name="view-button" id="view-fisa-medicala" value="Vizualizează radiografia 3D" onclick="viewFisa( '<?php echo $fisa_url ;?>' );">
+		      <div class="">
+		      	<div id='loading'>
+					    <h1 class='onair'>Se încarcă...</h1> 
+					    <div class="loader-bg boxair"></div>
+						</div>
+		      </div>
+		      <?php 
         }
 
       ?>
-      <input type="button" name="view-button" id="view-fisa-medicala" value="Vizualizează radiografia 3D" onclick="viewFisa( '<?php echo $fisa_url ;?>' );">
-      <div class="">
-      	<div id='loading'>
-			    <h1 class='onair'>Loading data...</h1> 
-			    <div class="loader-bg boxair"></div>
-			</div>
-      </div>
+
     </div>
 
     <?php if ($links = render($content['links'])): ?>
@@ -76,20 +82,3 @@
   </div>
 
 </article>
-<!-- document.getElementsByTagName('canvas')[0].style.display = 'none'  -->
-<button type="button" onclick="closeCanvas()">x</button>
-<script type="text/javascript">
-	
-	function closeCanvas(){
-		var canvas  = document.getElementsByTagName('canvas'), index ;
-
-		for (index = canvas.length - 1; index >= 0; index--) {
-		    canvas[index].parentNode.removeChild(canvas[index]);
-		}
-	}
-  var canv = document.getElementsByTagName('canvas');
-  var but = '<button type="button>x</button>';
-  console.log(but);
-
-  // canv.innerHtml = canv.innerHtml + 
-</script>

@@ -8,26 +8,26 @@ html,body {
 
 @keyframes "onair" {
  0% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #dd1d00;
  }
  50% {
     text-shadow: none;
  }
  100% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #dd1d00;
  }
 
 }
 
 @-moz-keyframes onair {
  0% {
-   text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff;
+   text-shadow: 0 0 10px #fff, 0 0 20px #dd1d00;
  }
  50% {
    text-shadow: none;
  }
  100% {
-   text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff;
+   text-shadow: 0 0 10px #fff, 0 0 20px #dd1d00;
  }
 
 }
@@ -77,14 +77,12 @@ html,body {
    */
 /*Use shadows to slowly build up the glow. The first shadow should be the colour of the text. Subsequent shadows are the colour you want the glow to be, all with no x or y offset and with increasing amounts of blur (the number of shadows you use depends on how big you want the glow to be).*/
 
--webkit-animation: onair 2.0s linear infinite;
+/*-webkit-animation: onair 2.0s linear infinite;
   -moz-animation: onair 2.0s linear infinite;
   -ms-animation: onair 2.0s linear infinite;
   -o-animation: onair 2.0s linear infinite;
-  animation: onair 2.0s linear infinite; /*
-  
-  
-  */
+  animation: onair 2.0s linear infinite;*/
+  color: #fff; 
 }
 
 .circle {
@@ -99,15 +97,15 @@ html,body {
 canvas {
   top: 10%;
   left: 10%;
-  position: absolute;
+  position: fixed;
   background: #000;
   width: 80%;
   border-radius: 5px;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .dg.ac {
-  display: none !important;
+  /*display: none !important;*/
 }
 body {
   /*font-family: "Arial";*/
@@ -287,7 +285,7 @@ p {
 
 
 /* Custom styling */
-.not-logged-in {
+.front.not-logged-in {
   background: #eeeeee;
 }
 .not-logged-in .banner-logo {
@@ -295,7 +293,7 @@ p {
   margin-top: 75px;
   text-align: center;
 }
-.not-logged-in header, .not-logged-in #subfooter, .not-logged-in #page {
+.front.not-logged-in header, .front.not-logged-in #subfooter, .front.not-logged-in #page {
   display: none;
 }
 .not-logged-in #highlighted-bottom {
@@ -331,7 +329,7 @@ input.form-text, textarea, select {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-input[type="submit"] {
+input[type="submit"], button, html input[type=button], input[type=reset], ul.links li a {
   border-radius: 0;
   padding: 10px 15px;
   min-width: inherit;
@@ -341,15 +339,47 @@ input[type="submit"] {
 .form-managed-file .form-file {
   display: inline-block;
 }
-.node-pacient .field.field-label-above {
+.field.field-label-above {
     margin-bottom: 10px;
 }
-.node-pacient .field-label {
-  display: inline-block;
+.field-label {
   margin-right: 5px;
   font-size: 16px;
 }
-.node-pacient .field-items {
-    display: inline-block;
+.field-items {
     font-size: 16px;
+}
+.field-name-field-radiografie- {
+  display: none;
+}
+
+.dg.ac{
+  z-index: 9999!important;
+}
+.dg .c select {
+    margin-top: 0px!important;
+    padding: 0!important;
+}
+.dg.main .exit-button {
+  -webkit-transition: opacity 0.1s linear;
+  -o-transition: opacity 0.1s linear;
+  -moz-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+  border: 0;
+  position: absolute;
+  line-height: 19px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #000;
+  width: 245px;
+}
+
+#page-container {
+  min-height: 100%;
+  margin-bottom: -100px;
+}
+#subfooter, .push {
+  height: 100px;
 }
