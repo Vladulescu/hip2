@@ -50,8 +50,14 @@
         hide($content['comments']);
         hide($content['links']);
         print render($content);
+        // $content['field_radiografie_'][0]['#markup']
+        $fisa_url = "";
+        if( !empty( $content['field_radiografie_'][0]['#markup'] ) ){
+        	$fisa_url = $content['field_radiografie_'][0]['#markup'];
+        }
+
       ?>
-      <input type="button" name="view-button" id="view-fisa-medicala" value="Vizualizează radiografia 3D" onclick="viewFisa();">
+      <input type="button" name="view-button" id="view-fisa-medicala" value="Vizualizează radiografia 3D" onclick="viewFisa( '<?php echo $fisa_url ;?>' );">
       <div class="">
       	<div id='loading'>
 			    <h1 class='onair'>Loading data...</h1> 

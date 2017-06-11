@@ -406,7 +406,8 @@ xslicegui.prototype.reslice = function(){
   }
 }
 
-function viewFisa() {
+function viewFisa( file ) {
+
   document.getElementById('loading').style.display = "block";
 
   // size contents
@@ -422,7 +423,8 @@ function viewFisa() {
   // .. and attach a volume
   // volume.file = 'http://med-motion.stagingserver.ro/sites/default/files/brain.nii.gz';
   //volume.file = 'http://x.babymri.org/?lesson17.nii.gz';
-  volume.file = 'http://med-motion.stagingserver.ro/sites/default/files/ADJFRCJX.nii_.gz';
+  //volume.file = 'http://med-motion.stagingserver.ro/sites/default/files/ADJFRCJX.nii_.gz';
+  volume.file = file;
 
   // only add the volume for now, the mesh gets loaded on request
   r.add(volume);

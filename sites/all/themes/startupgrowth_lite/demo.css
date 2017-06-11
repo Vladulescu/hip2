@@ -337,3 +337,7 @@ input[type="submit"] {
   min-width: inherit;
   margin-top: 0;
 }
+
+.form-managed-file .form-file {
+  display: inline-block;
+}
